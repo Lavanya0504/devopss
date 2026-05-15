@@ -16,6 +16,6 @@ app.delete("/notes/:id", (req, res) => {
 notes.splice(req.params.id, 1);
 res.json({ message: "Note Deleted" });
 });
-app.listen(5000, () => {
-console.log("Server running on port 5000");
+app.listen(5000, "0.0.0.0", () => {
+  console.log("Server running on port 5000");
 });
