@@ -17,10 +17,11 @@ username: ${{ secrets.EC2_USERNAME }}
 key: ${{ secrets.EC2_SSH_KEY }}
 script: |
 cd /home/ubuntu
-if [ ! -d "devops-notes-app" ]; then
+if [ ! -d "devopss" ]; then
 git clone https://github.com/Lavanya0504/devopss.git
 fi
-cd devops-notes-app
+
+cd devopss
 git pull origin main
 docker compose down
 docker compose up --build -d
